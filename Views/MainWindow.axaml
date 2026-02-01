@@ -1,0 +1,329 @@
+<Window
+    x:Class="Calculadora.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="using:Calculadora"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Calculadora.ViewModels"
+    Title="Calculadora"
+    Width="500"
+    Height="650"
+    MinWidth="550"
+    MinHeight="600"
+    MaxWidth="1280"
+    MaxHeight="1000"
+    x:DataType="vm:MainWindowViewModel"
+    CanResize="True"
+    Icon="/Assets/icon.ico"
+    mc:Ignorable="d">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Border
+        Margin="16"
+        Padding="20"
+        Classes="card">
+        <Grid RowDefinitions="Auto,Auto,*">
+
+
+            <TextBlock
+                Grid.Row="0"
+                Margin="0,0,0,20"
+                HorizontalAlignment="Center"
+                Classes="titulo"
+                Text="Calculadora" />
+
+
+            <Border Grid.Row="1" Classes="display-area">
+                <StackPanel>
+                    <TextBox
+                        x:Name="InputTextBox"
+                        Padding="10"
+                        HorizontalContentAlignment="Right"
+                        VerticalContentAlignment="Center"
+                        AcceptsReturn="False"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        BorderThickness="0"
+                        Classes="display"
+                        FocusAdorner="{x:Null}"
+                        FontSize="20"
+                        Foreground="#808080"
+                        IsReadOnly="False"
+                        Text="0"
+                        Watermark="0" />
+
+                    <TextBlock
+                        x:Name="InputResultadoTextBlock"
+                        Margin="0,8,0,16"
+                        HorizontalAlignment="Right"
+                        Classes="resultado"
+                        Text="0" />
+
+                    <Grid
+                        Margin="0,8,0,0"
+                        ColumnDefinitions="Auto,*"
+                        RowDefinitions="Auto,Auto,Auto,Auto">
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="0,4"
+                            Classes="conversion-label"
+                            Text="HEX" />
+                        <TextBlock
+                            x:Name="HexValueTextBlock"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0,4"
+                            HorizontalAlignment="Right"
+                            Classes="conversion-value"
+                            Text="0" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,4"
+                            Classes="conversion-label"
+                            Text="DEC" />
+                        <TextBlock
+                            x:Name="DecValueTextBlock"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,4"
+                            HorizontalAlignment="Right"
+                            Classes="conversion-value"
+                            Text="0" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,4"
+                            Classes="conversion-label"
+                            Text="OCT" />
+                        <TextBlock
+                            x:Name="OctValueTextBlock"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,4"
+                            HorizontalAlignment="Right"
+                            Classes="conversion-value"
+                            Text="0" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,4"
+                            Classes="conversion-label"
+                            Text="BIN" />
+                        <TextBlock
+                            x:Name="BinValueTextBlock"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,4"
+                            HorizontalAlignment="Right"
+                            Classes="conversion-value"
+                            Text="0" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Grid
+                Grid.Row="2"
+                Margin="0,16,0,0"
+                ColumnDefinitions="*,*,*,*,*"
+                RowDefinitions="*,*,*,*,*,*">
+
+                <components:CalcButton
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    ClickMiBoton="HandleButtonClick"
+                    Titulo="A" />
+                <components:CalcButton
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    ClickMiBoton="HandleButtonClick"
+                    Titulo="B" />
+                <components:CalcButton
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    ClickMiBoton="HandleButtonClick"
+                    Titulo="C" />
+                <components:CalcButton
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    ClickMiBoton="HandleButtonClick"
+                    Titulo="D" />
+                <components:CalcButton
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    ClickMiBoton="HandleButtonClick"
+                    Titulo="E" />
+                <components:CalcButton
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    ClickMiBoton="HandleButtonClick"
+                    Titulo="F" />
+                <components:CalcButton
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="x" />
+
+                <components:CalcButton
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="(" />
+                <components:CalcButton
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo=")" />
+                <components:CalcButton
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="%" />
+
+
+                <components:CalcButton
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="7" />
+                <components:CalcButton
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="8" />
+                <components:CalcButton
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="9" />
+
+
+                <components:CalcButton
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="4" />
+                <components:CalcButton
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="5" />
+                <components:CalcButton
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="6" />
+
+
+                <components:CalcButton
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="1" />
+                <components:CalcButton
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="2" />
+                <components:CalcButton
+                    Grid.Row="4"
+                    Grid.Column="3"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="3" />
+
+                <components:CalcButton
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="0" />
+
+
+                <components:CalcButton
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    ClickMiBoton="HandlePreviousCaretPosition"
+                    TieneSombra="False"
+                    Titulo="&lt;&lt;" />
+
+                <components:CalcButton
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    ClickMiBoton="HandleNextCaretPosition"
+                    TieneSombra="False"
+                    Titulo="&gt;&gt;" />
+
+                <components:CalcButton
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    ClickMiBoton="HandleClearButtonClick"
+                    TieneSombra="False"
+                    Titulo="CE" />
+                <components:CalcButton
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    ClickMiBoton="HandleDeleteButtonClick"
+                    TieneSombra="False"
+                    Titulo="DEL" />
+
+                <components:CalcButton
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="+" />
+
+                <components:CalcButton
+                    Grid.Row="2"
+                    Grid.Column="4"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="*" />
+
+                <components:CalcButton
+                    Grid.Row="3"
+                    Grid.Column="4"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="-" />
+
+                <components:CalcButton
+                    Grid.Row="4"
+                    Grid.Column="4"
+                    ClickMiBoton="HandleButtonClick"
+                    TieneSombra="False"
+                    Titulo="/" />
+                <components:CalcButton
+                    Grid.Row="5"
+                    Grid.Column="4"
+                    ClickMiBoton="HandleConvertButtonClick"
+                    TieneSombra="False"
+                    Titulo="=" />
+
+
+            </Grid>
+        </Grid>
+    </Border>
+
+</Window>

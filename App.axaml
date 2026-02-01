@@ -1,0 +1,16 @@
+<Application
+    x:Class="Calculadora.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculadora"
+    RequestedThemeVariant="Light">
+
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="avares://Calculadora/Styles/AppStyles.axaml" />
+    </Application.Styles>
+</Application>

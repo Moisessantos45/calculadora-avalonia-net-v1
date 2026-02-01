@@ -1,0 +1,33 @@
+<UserControl
+  x:Class="Calculadora.CalcButton"
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Calculadora"
+  x:DataType="local:CalcButton">
+  <UserControl.Resources>
+    <local:BoolToBoxShadowConverter x:Key="BoolToBoxShadowConverter" />
+  </UserControl.Resources>
+
+  <Button
+    x:Name="MiBotonInterno"
+    Padding="2"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Background="Transparent"
+    BorderThickness="0">
+
+    <Border
+      Padding="4"
+      Background="{DynamicResource MiBotonBackground}"
+      BoxShadow="{Binding TieneSombra, RelativeSource={RelativeSource AncestorType=local:CalcButton}, Converter={StaticResource BoolToBoxShadowConverter}}"
+      CornerRadius="6">
+      <TextBlock
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        FontSize="12"
+        FontWeight="SemiBold"
+        Foreground="#1c1c1e"
+        Text="{Binding Titulo, RelativeSource={RelativeSource AncestorType=local:CalcButton}}" />
+    </Border>
+  </Button>
+</UserControl>

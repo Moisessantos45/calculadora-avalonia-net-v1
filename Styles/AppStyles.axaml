@@ -1,0 +1,153 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style>
+        <Style.Resources>
+            <SolidColorBrush x:Key="AppBackground" Color="#f5f5f7" />
+            <SolidColorBrush x:Key="CardBackground" Color="#ffffff" />
+            <SolidColorBrush x:Key="SurfaceBackground" Color="#f0f0f2" />
+
+            <SolidColorBrush x:Key="AccentPrimary" Color="#007AFF" />
+            <SolidColorBrush x:Key="AccentSecondary" Color="#5856D6" />
+
+            <SolidColorBrush x:Key="TextPrimary" Color="#1c1c1e" />
+            <SolidColorBrush x:Key="TextSecondary" Color="#3c3c43" />
+            <SolidColorBrush x:Key="TextMuted" Color="#8e8e93" />
+
+            <SolidColorBrush x:Key="ButtonBackground" Color="#e5e5ea" />
+            <SolidColorBrush x:Key="ButtonHover" Color="#d1d1d6" />
+            <SolidColorBrush x:Key="ButtonPressed" Color="#c7c7cc" />
+            <SolidColorBrush x:Key="OperatorButton" Color="#007AFF" />
+            <SolidColorBrush x:Key="FunctionButton" Color="#5856D6" />
+
+            <SolidColorBrush x:Key="MiBotonBackground" Color="#e5e5ea" />
+        </Style.Resources>
+    </Style>
+
+    <Style Selector="Window">
+        <Setter Property="Background" Value="{DynamicResource AppBackground}" />
+        <Setter Property="FontFamily" Value="Segoe UI, Inter, Roboto, sans-serif" />
+    </Style>
+
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+    </Style>
+
+    <Style Selector="TextBlock.titulo">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+    </Style>
+
+    <Style Selector="TextBlock.display">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="FontFamily" Value="Consolas, monospace" />
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+    </Style>
+
+    <Style Selector="TextBlock.resultado">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontFamily" Value="Consolas, monospace" />
+        <Setter Property="Foreground" Value="{DynamicResource AccentPrimary}" />
+    </Style>
+
+    <Style Selector="TextBlock.conversion-label">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{DynamicResource AccentPrimary}" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+
+    <Style Selector="TextBlock.conversion-value">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontFamily" Value="Consolas, monospace" />
+        <Setter Property="Foreground" Value="{DynamicResource TextSecondary}" />
+    </Style>
+
+    <Style Selector="Button">
+        <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="10,8" />
+        <Style.Animations>
+            <Animation Duration="0:0:0.15">
+                <KeyFrame Cue="0%">
+                    <Setter Property="Opacity" Value="1" />
+                </KeyFrame>
+                <KeyFrame Cue="100%">
+                    <Setter Property="Opacity" Value="0.9" />
+                </KeyFrame>
+            </Animation>
+        </Style.Animations>
+    </Style>
+
+    <Style Selector="Button:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ButtonHover}" />
+    </Style>
+
+    <Style Selector="Button:pressed">
+        <Setter Property="Background" Value="{DynamicResource ButtonPressed}" />
+        <Setter Property="RenderTransform" Value="scale(0.97)" />
+    </Style>
+
+    <Style Selector="Button.operador">
+        <Setter Property="Background" Value="{DynamicResource OperatorButton}" />
+    </Style>
+
+    <Style Selector="Button.funcion">
+        <Setter Property="Background" Value="{DynamicResource FunctionButton}" />
+    </Style>
+
+    <Style Selector="Border.card">
+        <Setter Property="Background" Value="{DynamicResource CardBackground}" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="Padding" Value="14" />
+        <Setter Property="BoxShadow" Value="0 2 12 0 #20000000" />
+    </Style>
+
+    <Style Selector="Border.display-area">
+        <Setter Property="Background" Value="{DynamicResource SurfaceBackground}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Margin" Value="0,0,0,12" />
+    </Style>
+
+    <Style Selector="Grid.calculator-grid">
+        <Setter Property="Margin" Value="8" />
+    </Style>
+
+    <Style Selector="TextBox.display">
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="TextBox.display:focus">
+        <Setter Property="BorderBrush" Value="#50808080" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="TextBox.display:pointerover">
+        <Setter Property="BorderBrush" Value="#30808080" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="TextBox.display /template/ Border#PART_BorderElement">
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="TextBox.display:focus /template/ Border#PART_BorderElement">
+        <Setter Property="BorderBrush" Value="#40808080" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="TextBox.display:focus-within /template/ Border#PART_BorderElement">
+        <Setter Property="BorderBrush" Value="#40808080" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+</Styles>

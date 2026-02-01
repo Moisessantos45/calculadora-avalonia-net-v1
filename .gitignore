@@ -1,0 +1,43 @@
+## Ignorar builds y outputs
+**/bin/
+**/obj/
+**/publish*/
+**/publish-*/
+publish-win/
+Calculadora-Setup.exe
+
+## Visual Studio / VS Code
+.vs/
+.vscode/settings.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Logs y temps
+*.log
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]uild/
+[Ll]ogs/
+
+## NuGet / packages
+packages/
+*.nupkg
+**/*.nupkg
+!packages/build/
+
+## OS generated
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+## Avalonia extras
+.Avalonia/

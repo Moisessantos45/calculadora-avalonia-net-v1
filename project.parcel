@@ -1,0 +1,10 @@
+{
+  "name": "Calculadora",
+  "version": "1.0.0",
+  "platforms": ["win-x64"],
+  "windows": {
+    "displayVersion": "1.0.0",
+    "publisher": "Moises Santos HDZ",
+    "installerType": "nsis"
+  }
+}
