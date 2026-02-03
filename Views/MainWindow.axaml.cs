@@ -103,6 +103,7 @@ public partial class MainWindow : Window
 
         if (InputTextBox.CaretIndex == 0)
         {
+            InputTextBox.Text = InputTextBox.Text[..^1];
             return;
         }
 
